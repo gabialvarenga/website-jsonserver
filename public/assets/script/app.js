@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /*const userProfileURL = 'https://api.github.com/users/gabialvarenga';
-  const userReposURL = 'https://ap.github.com/users/gabialvarenga/repos';
+  const userProfileURL = 'https://api.github.com/users/gabialvarenga';
+  const userReposURL = 'https://api.github.com/users/gabialvarenga/repos';
   const teamMemberURLs = [
     'https://api.github.com/users/CarlosJFigueiredo',
     'https://api.github.com/users/joaogscc',
-    'https://api.github.com/users/marcosffp',
     'https://api.github.com/users/luisajardim'
   ];
-*/
+
   const carouselImages = [
     { src: '/public/assets/img/imagem-chatbot.png', alt: 'tecnologia' },
     { src: '/public/assets/img/imagem-iot.png', alt: 'inovação' },
@@ -30,11 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="info-icons">
             <div class="info-text">
               <p><strong>Localização:</strong> ${profileData.location || 'Não especificado'}</p>
-              <p><strong>E-mail:</strong> ${profileData.email || 'Não disponível'}</p>
+              <p><strong>Faculdade:</strong> PUC Minas</p>
             </div>
             <div class="followers">
-              <i class="fa-solid fa-users fa-2x"></i>
-              <p>${profileData.followers}</p>
+              <i class="fa-solid fa-user-friends fa-2x"></i>
+              <p>${profileData.followers} seguidores</p>
+              <p>${profileData.following} seguindo</p>
             </div>
           </div>
           <div class="social-links">
@@ -75,54 +75,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Função para obter dados dos membros da equipe
-  async function getTeamData(urls) {
+  async function getTeamData() {
     try {
-      const teamHTML = await Promise.all(urls.map(async url => {
+      const teamData = await Promise.all(teamMemberURLs.map(async (url) => {
         const response = await fetch(url);
-        const memberData = await response.json();
-
-        return `
-          <div class="col-md-4 col-sm-6">
-            <div class="card">
-              <img src="${memberData.avatar_url}" class="card-img-top" alt="${memberData.name}">
-              <div class="card-body">
-                <h5 class="card-title">${memberData.name}</h5>
-                <p class="card-text">${memberData.bio || 'Sem biografia disponível.'}</p>
-                <a href="${memberData.html_url}" class="btn btn-primary" target="_blank">Ver perfil</a>
-              </div>
-            </div>
-          </div>
-        `;
+        return await response.json();
       }));
 
-      document.getElementById('team-content').innerHTML = teamHTML.join('');
+      const teamHTML = teamData.map(member => `
+        <div class="team-member">
+          <img src="${member.avatar_url}" alt="Foto do membro da equipe">
+          <h4>${member.login}</h4>
+        </div>
+      `).join('');
+
+      document.getElementById('team-content').innerHTML = teamHTML;
     } catch (error) {
-      console.error('Erro ao obter dados dos membros da equipe:', error);
+      console.error('Erro ao obter dados da equipe:', error);
     }
   }
 
-  // Função para configurar o carrossel
-  function setupCarousel(images) {
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
-    const innerContainer = document.querySelector('.carousel-inner');
+  // Função para carregar imagens no carousel
+  function loadCarouselImages() {
+    const carouselInner = document.querySelector('.carousel-inner');
 
-    const indicatorsHTML = images.map((_, index) => `
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>
-    `).join('');
-
-    const itemsHTML = images.map((image, index) => `
+    const carouselHTML = carouselImages.map((image, index) => `
       <div class="carousel-item ${index === 0 ? 'active' : ''}">
         <img src="${image.src}" class="d-block w-100" alt="${image.alt}">
       </div>
     `).join('');
 
-    indicatorsContainer.innerHTML = indicatorsHTML;
-    innerContainer.innerHTML = itemsHTML;
+    carouselInner.innerHTML = carouselHTML;
   }
 
-  // Chamar as funções para obter dados e configurar o carrossel
+  // Carregar dados da página
   getProfileData(userProfileURL, 'about-content');
   getRepoData();
-  getTeamData(teamMemberURLs);
-  setupCarousel(carouselImages);
+  getTeamData();
+  loadCarouselImages();
 });

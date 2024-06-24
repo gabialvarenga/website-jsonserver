@@ -43,10 +43,12 @@ body {
     color: rgba(140, 179, 223, 0.801);
 }
 
-.menu {
+/* Menu */
+.menu ul {
     list-style-type: none;
     display: flex;
     align-items: center;
+    padding: 0;
 }
 
 .menu li {
@@ -57,83 +59,70 @@ body {
 .menu li a {
     color: #000;
     text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .menu li a:hover {
+    background-color: rgba(140, 179, 223, 0.1);
     color: rgba(140, 179, 223, 0.801);
 }
 
-/* Main */
+/* Sessões */
 .main {
-    padding: 20px 60px;
+    padding: 20px;
 }
 
 .main h2 {
-    margin-top: 30px;
-    color: #000;
+    color: rgba(140, 179, 223, 0.801);
+    text-align: center;
 }
 
 .main hr {
-    margin: 20px 0;
-    border-color: rgba(140, 179, 223, 0.801);
+    border: 0;
+    height: 2px;
+    background-color: rgba(140, 179, 223, 0.801);
+    margin: 10px 0;
 }
 
-.descricao h3,
-.detalhe h3,
-.linguagem h3,
-.link-acesso h3,
-.topicos h3 {
-    color: rgba(140, 179, 223, 0.801);
-    font-size: 20px;
-    margin-bottom: 10px;
+/* Carousel */
+.carousel-section {
+    padding: 20px 0;
 }
 
-.descricao p,
-.detalhe p,
-.linguagem p,
-.link-acesso p {
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Footer */
+.rodape {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rodape p {
     color: #000;
-    margin-bottom: 20px;
 }
 
-.detalhes {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.detalhe {
-    width: calc(50% - 10px);
-}
-
-.icones {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-.icones i {
-    margin-right: 10px;
-}
-
-.coracao i {
-    color: rgba(201, 3, 3, 0.753);
-}
-
-.compartilhados i {
-    color: rgba(8, 79, 160, 0.801);
-}
-
-/* Projetos */
+/* Estilo para os cards de projetos */
 .projects-section .card {
     border: none;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.projects-section .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .projects-section .card-title {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .projects-section .card-text {
@@ -144,6 +133,7 @@ body {
 .projects-section .btn-primary {
     background-color: rgba(140, 179, 223, 0.801);
     border-color: rgba(140, 179, 223, 0.801);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .projects-section .btn-primary:hover {
@@ -151,67 +141,165 @@ body {
     border-color: #6e8cb6;
 }
 
-/* Conteúdo Recomendado */
-.carousel-section {
-    padding: 0 60px;
-}
 
-.carousel-section h2 {
-    margin-top: 30px;
-    color: #000;
-}
-
-.carousel-section hr {
-    margin: 20px 0;
-    border-color: rgba(140, 179, 223, 0.801);
-}
-
-.carousel {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.carousel .carousel-item img {
-    width: 100%;
-    height: auto;
-}
-
-/* Equipe */
-.team-section {
-    padding: 0 60px;
-}
-
-.team-section h2 {
-    margin-top: 30px;
-    color: #000;
-}
-
-.team-section hr {
-    margin: 20px 0;
-    border-color: rgba(140, 179, 223, 0.801);
-}
-
-.team-section .colega-perfil {
+/* Estilo para a área "Sobre Mim" */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.team-section .colega-perfil img {
-    width: 100px;
-    height: 100px;
+.about-section img {
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid rgba(140, 179, 223, 0.8);
+    /* Corrigindo a borda */
+}
+
+.about-section .text-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-section h3 {
+    font-size: 24px;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.team-section .colega-perfil h3 {
-    font-size: 18px;
-    margin-bottom: 0;
+.about-section p {
+    color: #6c757d;
+    line-height: 1.5;
 }
 
-/* Rodapé */
-.rodape {
-    text-align: center;
-    padding: 20px 0;
+/* Adicione estas regras para ajustar o ícone de seguidores */
+.info-icons {
+    margin-top: 10px; /* Ajusta o espaçamento entre o texto e o ícone */
+  }
+  
+  .followers {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Ajusta o espaçamento entre o ícone e o texto */
+  }
+  
+  .followers i {
+    font-size: 20px; /* Diminui o tamanho do ícone */
+    margin-right: 5px; /* Espaçamento à direita do ícone */
+  }
+  
+
+.about-section .info-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.about-section .info-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-section .info-text p {
+    margin-bottom: 10px;
+}
+
+/* Estilo para os ícones e texto de seguidores */
+.info-icons {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 20px; /* Espaçamento acima do ícone */
+}
+
+.followers {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+}
+
+.followers i {
+    font-size: 20px; /* Tamanho do ícone */
+    margin-right: 5px; /* Espaçamento à direita do ícone */
+}
+
+.followers span {
+    font-size: 16px; /* Tamanho do texto */
+    color: #6c757d; /* Cor do texto */
+    font-weight: 500; /* Peso da fonte */
+    margin-bottom: 0; /* Remove o espaçamento abaixo do texto */
+    margin-left: 5px; /* Espaçamento à esquerda do texto */
+}
+
+
+.about-section .social-links {
+    margin-top: 20px;
+}
+
+.about-section .social-links a {
+    color: #6c757d;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.about-section .social-links a:hover {
+    color: rgba(140, 179, 223, 0.8);
+}
+
+/* Estilo ajustado para os cards da equipe */
+.team-section .card {
+    width: 500px; /* largura reduzida */
+    border: none;
     background-color: #ffffff;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    margin-right: 1px; /* Espaçamento entre os cards */
+}
+
+.team-section .card:last-child {
+    margin-right: 0; /* Remove o espaçamento à direita do último card */
+}
+
+.team-section .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-section .card img {
+    height: 200px; /* Altura reduzida */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço do container */
+    border-radius: 5px 5px 0 0; /* Borda arredondada apenas no topo */
+}
+
+.team-section .card-title {
+    font-size: 16px; /* Tamanho de fonte reduzido */
+    margin-top: 10px;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+.team-section .card-text {
+    color: #6c757d;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 0 10px 10px 10px; /* Adiciona padding para espaçamento do texto */
+}
+
+.team-section .btn-primary {
+    background-color: rgba(140, 179, 223, 0.801);
+    border-color: rgba(140, 179, 223, 0.801);
+    transition: background-color 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto; /* Centraliza o botão */
+    margin-bottom: 10px; /* Espaçamento abaixo do botão */
+}
+
+.team-section .btn-primary:hover {
+    background-color: #6e8cb6;
+    border-color: #6e8cb6;
 }
