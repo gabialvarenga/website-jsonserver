@@ -1,430 +1,217 @@
+/* Reset e importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/*Configurações gerais*/
+/* Configurações gerais */
 * {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 body {
-  height: 100%;
-  background-color: #fffafa;
-  font-family: 'Inter', sans-serif;
+    height: 100%;
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
 
-/*header*/
+/* Header */
 .cabecalho {
-  color: #2e3132;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para o logotipo */
-.logo {
-  color: #000;
-  text-decoration: none;
-  border: 2px solid rgba(140, 179, 223, 0.801);
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-left: 40px;
+.cabecalho .lg {
+    color: #000;
+    text-decoration: none;
+    border: 2px solid rgba(140, 179, 223, 0.801);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.logo:hover {
-  color: rgba(140, 179, 223, 0.801);
-}
-
-.logo:active {
-  color: rgba(140, 179, 223, 0.801);
-}
-
-/* Estilos para o menu */
-.menu {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-
-.cabecalho .menu li {
-  margin-left: 20px;
-  margin-right: 40px;
-  font-size: 27px;
-}
-
-.cabecalho .menu li a:hover {
-  color: rgba(140, 179, 223, 0.801);
-}
-
-.cabecalho .menu li a {
-  color: #000;
-  text-decoration: none;
+.cabecalho .lg:hover,
+.cabecalho .lg:active {
+    color: rgba(140, 179, 223, 0.801);
 }
 
 .menu {
-  list-style-type: none;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
 }
 
 .menu li {
-  display: inline-block;
-  margin-left: 20px;
+    margin-left: 20px;
+    font-size: 18px;
 }
 
 .menu li a {
-  color: #2e3132;
-  text-decoration: none;
-  vertical-align: middle;
+    color: #000;
+    text-decoration: none;
 }
 
-/*Main*/
-
-/*Meu perfil*/
-.meu-perf h2 {
-  margin-top: 30px;
-  margin-left: 70px;
-  color: #000;
+.menu li a:hover {
+    color: rgba(140, 179, 223, 0.801);
 }
 
-.meu-perf hr {
-  margin-left: 70px;
-  color: rgba(140, 179, 223, 0.801);
-  margin-right: 60px;
+/* Main */
+.main {
+    padding: 20px 60px;
 }
 
-.img-text {
-  display: flex;
-  align-items: center;
+.main h2 {
+    margin-top: 30px;
+    color: #000;
 }
 
-.img-text img {
-  margin-right: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  margin-left: 70px;
+.main hr {
+    margin: 20px 0;
+    border-color: rgba(140, 179, 223, 0.801);
 }
 
-.icones {
-  display: flex;
-  align-items: center;
+.descricao h3,
+.detalhe h3,
+.linguagem h3,
+.link-acesso h3,
+.topicos h3 {
+    color: rgba(140, 179, 223, 0.801);
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.texto-principal {
-  color: #2e3132;
-  margin-right: 40px;
+.descricao p,
+.detalhe p,
+.linguagem p,
+.link-acesso p {
+    color: #000;
+    margin-bottom: 20px;
 }
 
-.texto-principal h3 {
-  color: rgba(140, 179, 223, 0.801);
+.detalhes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.midias-sociais {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.midias-sociais i {
-  color: #2e3132;
-  font-size: 24px;
-  margin: 5px;
-}
-
-.midias-sociais i:hover {
-  color: rgba(140, 179, 223, 0.801);
-}
-
-.icone {
-  display: flex;
-  justify-content: space-between;
-}
-
-.tex {
-  flex: 1;
-}
-
-.views {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.views i {
-  margin-right: 5px;
-  color: rgba(140, 179, 223, 0.801);
-}
-
-/*RepositÃģrio*/
-.card-repo h2 {
-  margin-top: 30px;
-  margin-left: 20px;
-  color: #2e3132;
-}
-
-.card-repo hr {
-  margin-left: 20px;
-  color: rgba(140, 179, 223, 0.801);
-  margin-right: 20px;
+.detalhe {
+    width: calc(50% - 10px);
 }
 
 .icones {
-  display: flex;
-  align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-.card-repo {
-  margin-left: 40px;
-  margin-right: 40px;
+.icones i {
+    margin-right: 10px;
 }
 
-.cardss {
-  margin-left: 20px;
-  margin-right: 20px;
+.coracao i {
+    color: rgba(201, 3, 3, 0.753);
 }
 
-/*ConteÃšdo Sugerido - carousel*/
+.compartilhados i {
+    color: rgba(8, 79, 160, 0.801);
+}
+
+/* Projetos */
+.projects-section .card {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projects-section .card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projects-section .card-text {
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.projects-section .btn-primary {
+    background-color: rgba(140, 179, 223, 0.801);
+    border-color: rgba(140, 179, 223, 0.801);
+}
+
+.projects-section .btn-primary:hover {
+    background-color: #6e8cb6;
+    border-color: #6e8cb6;
+}
+
+/* Conteúdo Recomendado */
+.carousel-section {
+    padding: 0 60px;
+}
+
+.carousel-section h2 {
+    margin-top: 30px;
+    color: #000;
+}
+
+.carousel-section hr {
+    margin: 20px 0;
+    border-color: rgba(140, 179, 223, 0.801);
+}
+
 .carousel {
-  margin-left: 40px;
-  margin-right: 40px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-.carousel h2 {
-  margin-top: 30px;
-  margin-left: 20px;
-  color: #2e3132;
-}
-
-.carousel hr {
-  margin-left: 20px;
-  color: rgba(140, 179, 223, 0.801);
-  margin-right: 20px;
-}
-
-.imagens {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-.carousel-item img {
-  max-width: 100%;
-  height: 500px;
-  border-radius: 10px;
-}
-
-/*Colegas de trabalho*/
-.meus-colegas {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.meus-colegas h2 {
-  margin-top: 30px;
-  margin-left: 20px;
-  color: #2e3132;
-}
-
-.meus-colegas hr {
-  margin-left: 20px;
-  color: rgba(140, 179, 223, 0.801);
-  margin-right: 20px;
-}
-
-.trabalho {
-  text-align: center;
-}
-
-.colega-perfil {
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  margin-left: 30px;
-}
-
-.colega-perfil h3 a {
-  text-decoration: none;
-  font-size: 20px;
-  color: #2e3132;
-}
-
-.colega-perfil h3 a:hover {
-  color: rgba(140, 179, 223, 0.801);
-}
-
-.colega-perfil img {
-  border-radius: 10px;
-}
-
-/*RodapÃĐ*/
-.rodape p {
-  text-align: center;
-  color: #2e3132;
-}
-
-.rodape hr {
-  margin-left: 20px;
-  color: rgba(140, 179, 223, 0.801);
-  margin-right: 20px;
-}
-
-/* Estilos para dispositivos com largura atÃĐ 768px (tablet e dispositivos mÃģveis) */
-@media screen and (max-width: 768px) {
-
-  /*header*/
-  .cabecalho {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cabecalho,
-  .menu {
-    margin-top: 20px;
-  }
-
-  .logo {
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-
-  .menu ul {
-    display: none;
-  }
-
-  .menu {
-    list-style-type: none;
-    margin-top: 10px;
-  }
-
-  .menu li {
-    display: block;
-    margin-left: 0;
-  }
-
-  .menu li a {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .menu li a:hover {
-    color: rgba(140, 179, 223, 0.801);
-  }
-
-  /*Perfil*/
-  .meu-perf h2 {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .meu-perf hr {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .img-text {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .img-text img {
-    margin-top: 10px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .texto-principal {
-    text-align: center;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .texto-principal p {
-    font-size: 13px;
-    margin-left: 15px;
-    margin-right: 15px;
-    text-align: justify;
-  }
-
-  .midias-sociais {
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .midias-sociais i {
-    margin: 5px;
-  }
-
-  .midias-sociais i:hover {
-    color: #2e3132;
-    ;
-  }
-
-  .tex {
-    text-align: left;
-  }
-
-  .viewss.views i {
-    margin-right: 9px;
-    font-size: 19px;
-  }
-
-  /*RepositÃģrio*/
-  .cardss {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /*Colegas de trabalho*/
-  .meus-colegas {
-    margin-top: 60px;
-  }
-
-  .colegas {
-    text-align: center;
-  }
-
-  .colega-perfil {
-    margin: 10px auto;
-    margin-right: 15px;
-    text-align: center;
-  }
-
-  .colega-perfil h3 a {
-    cursor: pointer;
-    font-size: small;
-  }
-
-  .colega-perfil h3 a:hover {
-    color: rgba(140, 179, 223, 0.801);
-    font-size: medium;
-  }
-
-  /*Carousel*/
-  .carousel-inner img {
+.carousel .carousel-item img {
     width: 100%;
     height: auto;
-  }
+}
 
-  /*SubtÃ­tulos*/
-  .meu-perf h2,
-  .card-repo h2,
-  .carousel h2,
-  .meus-colegas h2 {
+/* Equipe */
+.team-section {
+    padding: 0 60px;
+}
+
+.team-section h2 {
+    margin-top: 30px;
+    color: #000;
+}
+
+.team-section hr {
+    margin: 20px 0;
+    border-color: rgba(140, 179, 223, 0.801);
+}
+
+.team-section .colega-perfil {
     text-align: center;
-    margin-left: 0;
-  }
+    margin-bottom: 20px;
+}
 
-  /*Linha*/
-  .carousel hr,
-  .card-repo hr,
-  .colegas hr,
-  .rodape hr {
-    margin-left: 0;
-    margin-right: 0;
-  }
+.team-section .colega-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-section .colega-perfil h3 {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }

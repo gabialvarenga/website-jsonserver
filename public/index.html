@@ -4,122 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Site pessoal</title>
+  <title>Site Pessoal</title>
+  <script defer src="/public/assets/script/app.js"></script>
 </head>
 
 <body>
-  <header class="cabecalho">
+  <header class="header">
     <h1><a href="#" class="logo">Gabriela Alvarenga</a></h1>
-    <nav class="menu">
+    <nav class="navigation"> 
       <ul>
-        <li><a href="#perfil">SEÇÃO 1</a></li>
-        <li><a href="#repositorios">SEÇÃO 2</a></li>
-        <li><a href="#conteudo-sugerido">SEÇÃO 3</a></li>
+        <li><a href="#about">Sobre Mim</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#team">Equipe</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
-    <section id="perfil" class="meu-perf">
-      <h2>Perfil</h2>
+    <!-- Seção Sobre Mim -->
+    <section id="about" class="about-section">
+      <h2>Sobre Mim</h2>
       <hr>
-      <div class="img-text">
-        <img id="profile-pic" src="assets/img/foto.jpg" alt="minha imagem de perfil" width="160px" height="160px">
-        <div id="profile-text" class="texto-principal">
-          <h3>Gabriela Alvarenga Cardoso</h3>
-          <p>
-            Sou estudante de Engenharia de Software da PUC Minas em busca de conhecimento e desafios.
-            Tenho interesse em tecnologia e inovação, e estou começando a desenvolver habilidades em HTML, CSS e
-            linguagem C.
-            Estou sempre em busca de oportunidades para aprender e crescer.</p>
-          <div class="icone">
-            <div class="text">
-              <p id="location"><strong>Localização:</strong> Belo Horizonte, MG, Brasil</p>
-              <p><strong>E-mail:</strong> gabialvarenga4@gmail.com</p>
-            </div>
-            <div class="views"><i class="fa-solid fa-users fa-2x"></i>
-              <p id="followers">14</p>
-            </div>
-          </div>
-          <div class="midias-sociais">
-            <a href="https://www.instagram.com/gabialvarengac/" target="_blank"><i
-                class="fa-brands fa-instagram"></i></a>
-          </div>
-        </div>
+      <div id="about-content" class="content-wrapper">
+        <!-- Conteúdo dinâmico sobre mim será carregado aqui -->
       </div>
     </section>
 
-    <section id="repositorios" class="card-repo">
-      <h2>Repositórios (3)</h2>
+    <!-- Seção de Projetos -->
+    <section id="projects" class="projects-section">
+      <h2>Projetos</h2>
       <hr>
-      <div class="cardss">
-        <div class="row row-cols-1 row-cols-md-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <a href="repo.html" target="_blank"><img src="assets/img/logo_mãe_coruja.jpg" class="card-img-top"
-                  alt="logo do site mãe coruja"></a>
-              <div class="card-body">
-                <a href="repo.html" target="_blank">
-                  <h5 class="card-title">Mãe Coruja</h5>
-                </a>
-                <p class="card-text"> "Mãe Coruja" é uma plataforma online focada em auxiliar pais e mães que estão no
-                  processo de educar seus filhos.</p>
-                <div class="icones">
-                  <i class="fa-solid fa-heart"></i>
-                  <p>13</p>
-                  <i class="fa-solid fa-users"></i>
-                  <p>6</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <a href="repo2.html" target="_blank"><img src="assets/img/linguagem-c.png" class="card-img-top"
-                  alt="imagem de código em liguagem C"></a>
-              <div class="card-body">
-                <a href="repo2.html" target="_blank">
-                  <h5 class="card-title">Linguagem C</h5>
-                </a>
-                <p class="card-text">Exercícios de Linguagem C para iniciantes.</p>
-                <div class="icones">
-                  <i class="fa-solid fa-heart"></i>
-                  <p>8</p>
-                  <i class="fa-solid fa-users"></i>
-                  <p>4</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <a href="repo3.html" target="_blank"><img src="assets/img/html-css.webp" class="card-img-top"
-                  alt="imagem de HTML e CSS"></a>
-              <div class="card-body">
-                <a href="repo3.html" target="_blank">
-                  <h5 class="card-title">Site simples de HTML e CSS</h5>
-                </a>
-                <p class="card-text">Como criar um site de forma simples usando html e css. </p>
-                <div class="icones">
-                  <i class="fa-solid fa-heart"></i>
-                  <p>9</p>
-                  <i class="fa-solid fa-users"></i>
-                  <p>1</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="projects-content" class="row g-4">
+        <!-- Conteúdo dinâmico dos projetos será carregado aqui -->
+      </div>
     </section>
 
-    <!--Carossel de imagens - Conteudo Sugerido-->
-    <section id="conteudo-sugerido" class="carousel">
-      <h2>Conteúdo Sugerido</h2>
+    <!-- Seção Conteúdo Recomendado -->
+    <section id="recommended-content" class="carousel-section">
+      <h2>Conteúdo Recomendado</h2>
       <hr>
-      <div class="imagens">
+      <div class="images">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -135,70 +61,50 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/img/imagem_ia.jpeg" class="d-block w-100" alt="Inteligência Artificial: ChatGPT">
+              <img src="/public/assets/img/imagem-chatbot.png" class="d-block w-100" alt="tecnologia">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/imagem-blockchain.png" class="d-block w-100" alt="BlockChain">
+              <img src="/public/assets/img/imagem-iot.png" class="d-block w-100" alt="inovação">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/imagem-chatbot.png" class="d-block w-100" alt="Chatbot">
+              <img src="/public/assets/img/imagem-realidade-virtual.jpg" class="d-block w-100" alt="inteligência artificial">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/imagem-iot.png" class="d-block w-100" alt="Internet das Coisas">
+              <img src="/public/assets/img/imagem_ia.jpeg" class="d-block w-100" alt="desenvolvimento">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/imagem-realidade-virtual.jpg" class="d-block w-100" alt="Realidade virtual">
+              <img src="/public/assets/img/imagem-blockchain.png" class="d-block w-100" alt="tecnologia emergente">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Anterior</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Próximo</span>
           </button>
         </div>
       </div>
-      </div>
     </section>
 
-    <section class="meus-colegas">
-      <h2>Colegas de Trabalho</h2>
+    <!-- Seção Equipe -->
+    <section id="team" class="team-section">
+      <h2>Equipe</h2>
       <hr>
-      <div class="trabalho">
-        <div class="colega-perfil">
-          <img src="assets/img/foto_marcosalberto.jpg" alt="foto de perfil do Marcos Alberto " width="100px"
-            height="100px">
-          <h3><a href="https://github.com/marcosffp" target="_blank">Marcos Alberto</a></h3>
-        </div>
-        <div class="colega-perfil">
-          <img src="assets/img/foto_luisajardim.jpg" alt="foto de perfil da Luisa Jardim" width="100px" height="100px">
-          <h3><a href="https://github.com/luisajardim" target="_blank">Luisa Jardim</a></h3>
-        </div>
-        <div class="colega-perfil">
-          <img src="assets/img/foto_elektraawar.jpg" alt="imagem de perfil da Elektra Awar" width="100px"
-            height="100px">
-          <h3><a href="https://github.com/elektraelawar" target="_blank">Elektra Awar</a></h3>
-        </div>
-        <div class="colega-perfil">
-          <img src="assets/img/foto_joaogabriel.jpg" alt="imagem de perfil do João Gabriel" width="100px"
-            height="100px">
-          <h3><a href="https://github.com/joaogscc" target="_blank">João Gabriel</a></h3>
-        </div>
-        <div class="colega-perfil">
-          <img src="assets/img/foto_carlosjose.jpg" alt="imagem de perfil do Carlos José" width="100px" height="100px">
-          <h3><a href="https://github.com/CarlosJFigueiredo" target="_blank">Carlos José</a></h3>
-        </div>
+      <div id="team-content" class="d-flex flex-wrap justify-content-center">
+        <!-- Conteúdo dinâmico da equipe será carregado aqui -->
       </div>
     </section>
   </main>
 
-  <footer class="rodape">
+  <footer class="footer">
     <hr>
-    <p> Copyright &copy; 2024 Gabriela Alvarenga Cardoso inc. Todos os direitos reservados</p>
+    <p>Copyright &copy; 2024 Gabriela Alvarenga Cardoso inc. Todos os direitos reservados.</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/script/app.js"></script>
+</body>
+
+</html>
