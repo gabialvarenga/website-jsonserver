@@ -22,27 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const profileData = await response.json();
 
       const profileHTML = `
-        <img src="${profileData.avatar_url}" alt="Foto de perfil" width="160px" height="160px">
-        <div class="text-content">
-          <h3>${profileData.name}</h3>
-          <p>${profileData.bio || 'Sem biografia disponível.'}</p>
-          <div class="info-icons">
-            <div class="info-text">
-              <p><strong>Localização:</strong> ${profileData.location || 'Não especificado'}</p>
-              <p><strong>Faculdade:</strong> PUC Minas</p>
-            </div>
-            <div class="followers">
-              <i class="fa-solid fa-user-friends fa-2x"></i>
-              <p>${profileData.followers} seguidores</p>
-              <p>${profileData.following} seguindo</p>
-            </div>
+      <img src="${profileData.avatar_url}" alt="Foto de perfil" width="160px" height="160px">
+      <div class="text-content">
+        <h3>${profileData.name}</h3>
+        <p>${profileData.bio || 'Sem biografia disponível.'}</p>
+        <div class="info-icons">
+          <div class="info-text">
+            <p><strong>Localização:</strong> ${profileData.location || 'Não especificado'}</p>
+            <p><strong>Faculdade:</strong> PUC Minas</p>
           </div>
-          <div class="social-links">
-            <a href="${profileData.html_url}" target="_blank"><i class="fa-brands fa-github"></i></a>
-            ${profileData.blog ? `<a href="${profileData.blog}" target="_blank"><i class="fa-solid fa-link"></i></a>` : ''}
+          <div class="followers">
+            <i class="fa-solid fa-user-friends fa-2x"></i>
+            <p>${profileData.followers} seguidores</p>
           </div>
         </div>
-      `;
+        <div class="social-links">
+          <a href="${profileData.html_url}" target="_blank"><i class="fa-brands fa-github"></i></a>
+          ${profileData.blog ? `<a href="${profileData.blog}" target="_blank"><i class="fa-solid fa-link"></i></a>` : ''}
+        </div>
+      </div>
+    `;
 
       document.getElementById(containerId).innerHTML = profileHTML;
     } catch (error) {
@@ -50,29 +49,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Função para obter dados dos repositórios do usuário
-  async function getRepoData() {
-    try {
-      const response = await fetch(userReposURL);
-      const reposData = await response.json();
+// Função para obter dados dos repositórios do usuário
+async function getRepoData() {
+  try {
+    const response = await fetch(userReposURL);
+    const reposData = await response.json();
 
-      const reposHTML = reposData.map(repo => `
-        <div class="col-md-4 col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">${repo.name}</h5>
-              <p class="card-text">${repo.description || 'Sem descrição disponível.'}</p>
-              <a href="${repo.html_url}" class="btn btn-primary" target="_blank">Ver repositório</a>
-            </div>
+    const reposHTML = reposData.map(repo => `
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${repo.name}</h5>
+            <p class="card-text">${repo.description || 'Sem descrição disponível.'}</p>
+            <a href="repo.html?repo=${repo.name}" class="btn btn-primary" target="_blank">Ver repositório</a>
           </div>
         </div>
-      `).join('');
+      </div>
+    `).join('');
 
-      document.getElementById('projects-content').innerHTML = reposHTML;
-    } catch (error) {
-      console.error('Erro ao obter dados dos repositórios:', error);
-    }
+    document.getElementById('projects-content').innerHTML = reposHTML;
+  } catch (error) {
+    console.error('Erro ao obter dados dos repositórios:', error);
   }
+}
+
 
   // Função para obter dados dos membros da equipe
   async function getTeamData() {
@@ -83,17 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }));
 
       const teamHTML = teamData.map(member => `
-        <div class="team-member">
-          <img src="${member.avatar_url}" alt="Foto do membro da equipe">
-          <h4>${member.login}</h4>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="${member.avatar_url}" class="card-img-top" alt="Foto do membro da equipe">
+          <div class="card-body">
+            <h5 class="card-title">${member.login}</h5>
+            <a href="${member.html_url}" class="btn btn-primary" target="_blank">Ver perfil</a>
+          </div>
         </div>
-      `).join('');
+      </div>
+    `).join('');
 
       document.getElementById('team-content').innerHTML = teamHTML;
     } catch (error) {
       console.error('Erro ao obter dados da equipe:', error);
     }
   }
+
 
   // Função para carregar imagens no carousel
   function loadCarouselImages() {

@@ -1,291 +1,133 @@
 {
-  "contatos": [
+  "usuario": {
+    "id": 160603188,
+    "login": "gabialvarenga",
+    "name": "Gabriela Alvarenga",
+    "bio": "software engineering student",
+    "location": "Belo Horizonte, MG, Brasil",
+    "followers": 4,
+    "following": 5,
+    "public_repos": 5,
+    "public_gists": 0,
+    "avatar_url": "https://avatars.githubusercontent.com/u/160603188?v=4",
+    "html_url": "https://github.com/gabialvarenga",
+    "blog": "https://@gabialvarenga4@gmail.com"
+  },
+  "repositorios": [
     {
-      "nome": "Cleiton Silva",
-      "telefone": "1-770-736-8031",
-      "email": "Sincere@april.biz",
-      "cidade": "Belo Horizonte",
-      "categoria": "amigos",
-      "website": "hildegard.org",
-      "id": 1
+      "id": 818013519,
+      "name": "gabialvarenga",
+      "full_name": "gabialvarenga/gabialvarenga",
+      "description": "Este é um repositório pessoal onde compartilho meus primeiros projetos como estudante iniciante na PUC Minas. Aqui você encontrará meu aprendizado em programação, desenvolvimento web, e outros trabalhos relacionados ao meu curso",
+      "html_url": "https://github.com/gabialvarenga/gabialvarenga",
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2024-06-20T23:17:42Z",
+      "topics": []
     },
     {
-      "id": 2,
-      "nome": "Ervin Howell",
-      "cidade": "Betim",
-      "categoria": "familia",
-      "email": "Shanna@melissa.tv",
-      "telefone": "010-692-6593",
-      "website": "anastasia.net"
+      "id": 816504847,
+      "name": "Hotel-Descanso-Garantido",
+      "full_name": "gabialvarenga/Hotel-Descanso-Garantido",
+      "description": "Este repositório contém o projeto da disciplina de Fundamentos de Engenharia de Software e Algoritmos e Estruturas de Dados I da PUC Minas. O projeto visa criar um sistema de gerenciamento para o Hotel Descanso Garantido em Itacaré – BA, substituindo métodos manuais por uma solução automatizada para controle de estadias, clientes e funcionários.",
+      "html_url": "https://github.com/gabialvarenga/Hotel-Descanso-Garantido",
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2024-06-17T22:27:55Z",
+      "topics": []
     },
     {
-      "id": 3,
-      "nome": "Clementine Bauch",
-      "cidade": "Rio de Janeiro",
-      "categoria": "trabalho",
-      "email": "Nathan@yesenia.net",
-      "telefone": "1-463-123-4447",
-      "website": "ramiro.info"
+      "id": 816506468,
+      "name": "plf-es-2024-1-ti1-0385100-falta-de-educacao-parental",
+      "full_name": "gabialvarenga/plf-es-2024-1-ti1-0385100-falta-de-educacao-parental",
+      "description": "plf-es-2024-1-ti1-0385100-falta-de-educacao-parental created by GitHub Classroom",
+      "html_url": "https://github.com/gabialvarenga/plf-es-2024-1-ti1-0385100-falta-de-educacao-parental",
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2024-06-17T22:34:06Z",
+      "topics": []
     },
     {
-      "id": 4,
-      "nome": "Patricia Lebsack",
-      "cidade": "Betim",
-      "categoria": "trabalho",
-      "email": "Julianne.OConner@kory.org",
-      "telefone": "493-170-9623 x156",
-      "website": "kale.biz"
+      "id": 787045388,
+      "name": "site-simples-html-css",
+      "full_name": "gabialvarenga/site-simples-html-css",
+      "description": "Este repositório contém um projeto de site simples feito com HTML e CSS, parte do meu aprendizado em programação front-end na PUC Minas, focado em estruturação de páginas e estilos responsivos.",
+      "html_url": "https://github.com/gabialvarenga/site-simples-html-css",
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2024-04-15T19:34:28Z",
+      "topics": []
     },
     {
-      "id": 5,
-      "nome": "Chelsey Dietrich",
-      "cidade": "São Paulo",
-      "categoria": "familia",
-      "email": "Lucio_Hettinger@annie.ca",
-      "telefone": "(254)954-1289",
-      "website": "demarco.info"
-    },
-    {
-      "id": 6,
-      "nome": "Mrs. Dennis Schulist",
-      "cidade": "Rio de Janeiro",
-      "categoria": "trabalho",
-      "email": "Karley_Dach@jasper.info",
-      "telefone": "1-477-935-8478",
-      "website": "ola.org"
-    },
-    {
-      "id": 7,
-      "nome": "Kurtis Weissnat",
-      "cidade": "Belo Horizonte",
-      "categoria": "amigos",
-      "email": "Telly.Hoeger@billy.biz",
-      "telefone": "210.067.6132",
-      "website": "elvis.io"
-    },
-    {
-      "id": 8,
-      "nome": "Nicholas Runolfsdottir V",
-      "cidade": "Belo Horizonte",
-      "categoria": "familia",
-      "email": "Sherwood@rosamond.me",
-      "telefone": "586.493.6943",
-      "website": "jacynthe.com"
-    },
-    {
-      "nome": "João Caetano",
-      "telefone": "(775)976-6794",
-      "email": "joao@dana.io",
-      "cidade": "Betim",
-      "categoria": "amigos",
-      "website": "conrad.com",
-      "id": 9
-    },
-    {
-      "id": 10,
-      "nome": "Clementina DuBuque",
-      "cidade": "São Paulo",
-      "categoria": "amigos",
-      "email": "Rey.Padberg@karina.biz",
-      "telefone": "024-648-3804",
-      "website": "ambrose.net"
-    },
-    {
-      "nome": "Felipe Augusto",
-      "cidade": "São Pailo",
-      "categoria": "trabalho",
-      "email": "felipe@pucminas.br",
-      "telefone": "546578845",
-      "website": "felipe.net",
-      "id": 11
-    },
-    {
-      "nome": "Simone Alves Nogueira",
-      "telefone": "21-73737626526",
-      "email": "sidosamba@rio.com",
-      "cidade": "Rio de Janeiro",
-      "categoria": "amigos",
-      "website": "http://pagode.com.br",
-      "id": 12
-    },
-    {
-      "nome": "João Esteves",
-      "telefone": "876348725638",
-      "email": "joao@joaoland.com",
-      "cidade": "Belo Horizonte",
-      "categoria": "trabalho",
-      "website": "http://joao.com",
-      "id": 13
+      "id": 817279202,
+      "name": "website-jsonserver",
+      "full_name": "gabialvarenga/website-jsonserver",
+      "description": "Repositório do Trabalho Prático 2 de Desenvolvimento de Interfaces Web na PUC Minas. Projeto de site pessoal dinâmico integrando dados do GitHub e JSONServer.",
+      "html_url": "https://github.com/gabialvarenga/website-jsonserver",
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": "JavaScript",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2024-06-19T11:31:26Z",
+      "topics": []
     }
   ],
-  "usuarios": [
+  "equipe": [
     {
-      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "id": 160924066,
+      "login": "CarlosJFigueiredo",
+      "name": "Carlos Figueiredo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/160924066?v=4",
+      "html_url": "https://github.com/CarlosJFigueiredo"
     },
     {
-      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "id": 164203417,
+      "login": "joaogscc",
+      "name": "João Gabriel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/164203417?v=4",
+      "html_url": "https://github.com/joaogscc"
     },
     {
-      "id": "171022ee-09b0-468a-962a-9c0772753cd0",
-      "login": "rommelcarneiro",
-      "senha": "12345",
-      "nome": "Rommel Carneiro",
-      "email": "rommel@abc.com"
+      "id": 164196658,
+      "login": "luisajardim",
+      "name": "Luísa Jardim ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/164196658?v=4",
+      "html_url": "https://github.com/luisajardim"
     }
   ],
-  "locais": [
+  "carrossel": [
     {
-      "id": 1,
-      "descricao": "PUC Minas - Coração Eucarístico",
-      "endereco": "Rua Dom José Gaspar, 500",
-      "favorito": true,
-      "cidade": "Belo Horizonte",
-      "latlong": [
-        -43.992911,
-        -19.923564
-      ],
-      "url": "https://www.pucminas.br",
-      "cor": "red"
+      "src": "/public/assets/img/imagem-chatbot.png",
+      "alt": "tecnologia"
     },
     {
-      "id": 2,
-      "descricao": "PUC Minas - Praça da Liberdade",
-      "endereco": "Av. Brasil, 2023 - Funcionários",
-      "favorito": false,
-      "cidade": "Belo Horizonte",
-      "latlong": [
-        -43.9397233,
-        -19.9332786
-      ],
-      "url": "https://www.pucminas.br/unidade/praca-da-liberdade/Paginas/default.aspx",
-      "cor": "red"
+      "src": "/public/assets/img/imagem-iot.png",
+      "alt": "inovação"
     },
     {
-      "id": 3,
-      "descricao": "PUC Minas - Barreiro",
-      "endereco": "Avenida Afonso Vaz de Melo, 1.200 - Barreiro",
-      "favorito": true,
-      "cidade": "Belo Horizonte",
-      "latlong": [
-        -44.025818,
-        -19.976609
-      ],
-      "url": "https://www.pucminas.br/unidade/barreiro/Paginas/default.aspx",
-      "cor": "red"
+      "src": "/public/assets/img/imagem-realidade-virtual.jpg",
+      "alt": "inteligência artificial"
     },
     {
-      "id": 4,
-      "descricao": "PUC Minas - São Gabriel",
-      "endereco": "Rua Walter Ianni, 255 - São Gabriel",
-      "favorito": true,
-      "cidade": "Belo Horizonte",
-      "latlong": [
-        -43.917967,
-        -19.859226
-      ],
-      "url": "https://www.pucminas.br/unidade/sao-gabriel/Paginas/default.aspx",
-      "cor": "red"
+      "src": "/public/assets/img/imagem_ia.jpeg",
+      "alt": "desenvolvimento"
     },
     {
-      "id": 5,
-      "descricao": "PUC Minas - Contagem",
-      "endereco": "R. Rio Comprido, 4.580",
-      "favorito": false,
-      "cidade": "Contagem",
-      "latlong": [
-        -44.076069,
-        -19.939135
-      ],
-      "url": "https://www.pucminas.br/unidade/contagem/Paginas/default.aspx",
-      "cor": "blue"
-    },
-    {
-      "id": 6,
-      "descricao": "PUC Minas - Betim",
-      "endereco": "R. do Rosário, 1.081 Bairro Angola",
-      "favorito": true,
-      "cidade": "Betim",
-      "latlong": [
-        -44.1984331,
-        -19.9550716
-      ],
-      "url": "https://www.pucminas.br/unidade/betim/Paginas/default.aspx",
-      "cor": "blue"
-    },
-    {
-      "id": 7,
-      "descricao": "PUC Minas - Poços de Caldas",
-      "endereco": "Av. Pe. Cletus Francis Cox, 1.661",
-      "favorito": true,
-      "cidade": "Poços de Caldas",
-      "latlong": [
-        -46.5944649,
-        -21.78904
-      ],
-      "url": "https://www.pucpcaldas.br/",
-      "cor": "green"
+      "src": "/public/assets/img/imagem-blockchain.png",
+      "alt": "tecnologia emergente"
     }
-  ],
-  "lancamentos": [
-    {
-      "mes": "jan-24",
-      "categoria": "Alimentação",
-      "valor": 500
-    },
-    {
-      "mes": "jan-24",
-      "categoria": "Transporte",
-      "valor": 200
-    },
-    {
-      "mes": "jan-24",
-      "categoria": "Lazer",
-      "valor": 300
-    },
-    {
-      "mes": "fev-24",
-      "categoria": "Alimentação",
-      "valor": 450
-    },
-    {
-      "mes": "fev-24",
-      "categoria": "Transporte",
-      "valor": 180
-    },
-    {
-      "mes": "fev-24",
-      "categoria": "Lazer",
-      "valor": 350
-    },
-    {
-      "mes": "mar-24",
-      "categoria": "Alimentação",
-      "valor": 600
-    },
-    {
-      "mes": "mar-24",
-      "categoria": "Transporte",
-      "valor": 250
-    },
-    {
-      "mes": "mar-24",
-      "categoria": "Lazer",
-      "valor": 400
-    }
-  ],
-  "cidades": [
-       { "id": 1, "cidade": "Belo Horizonte", "estado": "MG", "populacao": 3800000 },
-       { "id": 2, "cidade": "São Paulo", "estado": "SP", "populacao": 11800000 },
-       { "id": 3, "cidade": "Rio de Janeiro", "estado": "RJ", "populacao": 5300000 },
-       { "id": 4, "cidade": "Curitiba", "estado": "PR", "populacao": 1200000 },
-       { "id": 5, "cidade": "Fortaleza", "estado": "CE", "populacao": 2100000 }
-   ]
+  ]
 }

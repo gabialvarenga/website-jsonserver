@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/repo.css">
+    <title>Detalhes do Repositório</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1><a href="index.html" class="lg">Gabriela Alvarenga</a></h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html#perfil">Perfil</a></li>
+                <li><a href="index.html#repositorios">Repositórios</a></li>
+                <li><a href="index.html#conteudo-sugerido">Conteúdo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2 id="repo-name">Repositório: <span id="repo-title"></span></h2>
+        <hr>
+        <div class="descricao">
+            <h3>Descrição</h3>
+            <p id="repo-description"></p>
+        </div>
+
+        <div class="detalhes">
+            <div class="detalhe">
+                <h3>Data de Criação</h3>
+                <p id="repo-created-at"></p>
+            </div>
+
+            <div class="icones">
+                <div class="coracao">
+                    <i class="fa-solid fa-heart fa-2x"></i>
+                    <p id="repo-stargazers"></p>
+                </div>
+
+                <div class="compartilhados">
+                    <i class="fa-solid fa-users fa-2x"></i>
+                    <p id="repo-watchers"></p>
+                </div>
+
+                <div class="forks">
+                    <i class="fa-solid fa-code-branch fa-2x"></i>
+                    <p id="repo-forks"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="linguagem">
+            <h3>Linguagem Principal</h3>
+            <p id="repo-language"></p>
+        </div>
+
+        <div class="link-acesso">
+            <h3>Link de Acesso</h3>
+            <p><a id="repo-url" href="#" target="_blank"></a></p>
+        </div>
+
+        <div class="topicos">
+            <h3>Tópicos</h3>
+            <ul id="repo-topics"></ul>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <hr>
+        <p>Copyright &copy; 2024 Gabriela Alvarenga Cardoso inc. Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const repoName = getParameterByName('repo');
+            if (repoName) {
+                const repoDetailsURL = `https://api.github.com/repos/gabialvarenga/${repoName}`;
+
+                fetch(repoDetailsURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('repo-title').textContent = data.name;
+                        document.getElementById('repo-description').textContent = data.description || 'Sem descrição disponível.';
+                        document.getElementById('repo-created-at').textContent = new Date(data.created_at).toLocaleDateString('pt-BR');
+                        document.getElementById('repo-stargazers').textContent = data.stargazers_count;
+                        document.getElementById('repo-watchers').textContent = data.watchers_count;
+                        document.getElementById('repo-forks').textContent = data.forks_count;
+                        document.getElementById('repo-language').textContent = data.language || 'Não especificada';
+                        document.getElementById('repo-url').textContent = 'Ver repositório';
+                        document.getElementById('repo-url').href = data.html_url;
+
+                        const topicsList = document.getElementById('repo-topics');
+                        data.topics.forEach(topic => {
+                            const li = document.createElement('li');
+                            li.textContent = topic;
+                            topicsList.appendChild(li);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar detalhes do repositório:', error);
+                    });
+            } else {
+                console.error('Nome do repositório não especificado na URL.');
+            }
+        });
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

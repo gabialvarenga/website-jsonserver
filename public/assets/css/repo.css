@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Configurações gerais */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+    height: 100%;
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.cabecalho {
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lg {
+    color: #000;
+    text-decoration: none;
+    border: 2px solid rgba(140, 179, 223, 0.801);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+.lg:hover,
+.lg:active {
+    color: rgba(140, 179, 223, 0.801);
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho .menu li {
+    margin-left: 20px;
+    margin-right: 40px;
+    font-size: 27px;
+}
+
+.cabecalho .menu li a:hover {
+    color: rgba(140, 179, 223, 0.801);
+}
+
+.cabecalho .menu li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: #000;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+/* Main */
+.main h2 {
+    margin-top: 30px;
+    margin-left: 60px;
+    color: #000;
+}
+
+.main hr {
+    margin-left: 60px;
+    color: rgba(140, 179, 223, 0.801);
+    margin-right: 60px;
+}
+
+.descricao h3 {
+    color: rgba(140, 179, 223, 0.801);
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.descricao p {
+    margin-left: 60px;
+    margin-right: 60px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.detalhe h3 {
+    color: rgba(140, 179, 223, 0.801);
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.detalhe h3~p {
+    color: #000;
+    margin-left: 60px;
+}
+
+.icones {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    font-size: 20px;
+}
+
+.coracao i,
+.compartilhados i,
+.forks i {
+    margin-right: 20px;
+}
+
+.coracao i {
+    color: rgba(201, 3, 3, 0.753);
+}
+
+.compartilhados i {
+    color: rgba(8, 79, 160, 0.801);
+}
+
+.forks i {
+    color: rgba(80, 80, 80, 0.801);
+}
+
+.coracao i~p,
+.compartilhados i~p,
+.forks i~p {
+    color: #000;
+}
+
+.linguagem h3 {
+    color: rgba(140, 179, 223, 0.801);
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.linguagem p {
+    color: #000;
+    margin-left: 60px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.link-acesso p {
+    margin-left: 60px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.link-acesso h3 {
+    color: rgba(140, 179, 223, 0.801);
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.topicos {
+    list-style: none;
+}
+
+.topicos h3 {
+    color: rgba(140, 179, 223, 0.801);
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.topicos li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #9e978d;
+    border-radius: 5px;
+}
+
+.li {
+    margin-left: 30px;
+}
+
+/* Footer */
+.rodape p {
+    text-align: center;
+    color: #000;
+}
+
+.rodape hr {
+    margin-left: 20px;
+    color: rgba(140, 179, 223, 0.801);
+    margin-right: 20px;
+}
+
+/* Mídia para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .cabecalho .menu li {
+        margin: 6px;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .icones {
+        font-size: 10px;
+    }
+
+    .detalhes,
+    .detalhe h3,
+    .detalhe h3~p {
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+    .main h2,
+    .main hr,
+    .descricao h3,
+    .descricao p,
+    .icones,
+    .coracao i,
+    .compartilhados i,
+    .forks i,
+    .coracao i~p,
+    .compartilhados i~p,
+    .forks i~p,
+    .linguagem h3,
+    .linguagem p,
+    .link-acesso p,
+    .link-acesso h3,
+    .topicos h3 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .link-acesso p,
+    .linguagem p {
+        font-size: 17px;
+    }
+
+    .lg {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .topicos li {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .descricao p {
+        text-align: justify;
+    }
+}

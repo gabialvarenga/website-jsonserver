@@ -1,123 +1,109 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const getGithubData = async (url) => {
+const userProfileURL = 'https://api.github.com/users/gabialvarenga';
+const userReposURL = 'https://api.github.com/users/gabialvarenga/repos';
+const teamMemberURLs = [
+  'https://api.github.com/users/CarlosJFigueiredo',
+  'https://api.github.com/users/joaogscc',
+  'https://api.github.com/users/luisajardim'
+];
+
+const carouselImages = [
+  { src: '/public/assets/img/imagem-chatbot.png', alt: 'tecnologia' },
+  { src: '/public/assets/img/imagem-iot.png', alt: 'inovação' },
+  { src: '/public/assets/img/imagem-realidade-virtual.jpg', alt: 'inteligência artificial' },
+  { src: '/public/assets/img/imagem_ia.jpeg', alt: 'desenvolvimento' },
+  { src: '/public/assets/img/imagem-blockchain.png', alt: 'tecnologia emergente' }
+];
+
+async function getProfileData(url) {
   try {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error(`Erro ao obter dados da URL ${url}:`, error);
+    console.error(`Erro ao obter dados do perfil de ${url}:`, error);
     return null;
   }
-};
+}
 
-const fetchUserData = async (username) => {
-  return await getGithubData(`https://api.github.com/users/${username}`);
-};
-
-const fetchUserRepos = async (username) => {
-  return await getGithubData(`https://api.github.com/users/${username}/repos`);
-};
-
-const fetchCollaboratorsData = async (usernames) => {
-  const collaboratorPromises = usernames.map(async (username) => {
-    const userData = await fetchUserData(username);
-    if (userData) {
-      return {
-        id: userData.id,
-        name: userData.name,
-        avatar_url: userData.avatar_url
-      };
-    }
-  });
-
-  const collaborators = await Promise.all(collaboratorPromises);
-  return collaborators.filter(collaborator => collaborator !== undefined);
-};
-
-const buildUserObject = (data) => {
-  if (!data) return null;
-  return {
-    id: data.id,
-    login: data.login,
-    name: data.name,
-    bio: data.bio,
-    location: data.location,
-    followers: data.followers,
-    following: data.following,
-    public_repos: data.public_repos,
-    public_gists: data.public_gists,
-    avatar_url: data.avatar_url
-  };
-};
-
-const buildReposArray = (repos) => {
-  if (!repos) return [];
-  return repos.map(repo => ({
-    id: repo.id,
-    name: repo.name,
-    full_name: repo.full_name,
-    description: repo.description,
-    html_url: repo.html_url,
-    stargazers_count: repo.stargazers_count,
-    watchers_count: repo.watchers_count,
-    language: repo.language,
-    forks_count: repo.forks_count,
-    open_issues_count: repo.open_issues_count,
-    created_at: repo.created_at,
-    topics: repo.topics
-  }));
-};
-
-const carrosselImages = [
-  {
-    src: "../public/assets/img/imagem_cloud_tecnologia.jpg",
-    alt: "Fluxograma da tecnologia em nuvem"
-  },
-  {
-    src: "../public/assets/img/image_cloud_computing.webp",
-    alt: "Inforgrafico de cloud computing"
-  },
-  {
-    src: "../public/assets/img/imagem_tecnologia_mundo.jpg",
-    alt: "Tecnologia Quântica por volta do mundo"
-  },
-  {
-    src: "../public/assets/img/imagem_de_represetacao_tq.jpg",
-    alt: "Representação da tecnologia quântica"
-  },
-  {
-    src: "../public/assets/img/imagem_tecnologia_quantica.jpg",
-    alt: "Infografico da tecnologia em nuvem"
+async function getRepoData(url) {
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao obter dados dos repositórios:', error);
+    return null;
   }
-];
+}
 
-const saveDataToFile = (data) => {
-  fs.writeFileSync('./db/db.json', JSON.stringify(data, null, 2));
-  console.log('Dados do GitHub adicionados ao arquivo db.json com sucesso!');
-};
+async function getTeamData(urls) {
+  const teamDataPromises = urls.map(url => axios.get(url));
+  try {
+    const teamDataResponses = await Promise.all(teamDataPromises);
+    return teamDataResponses.map(response => response.data);
+  } catch (error) {
+    console.error('Erro ao obter dados da equipe:', error);
+    return null;
+  }
+}
 
-const salvarDados = async () => {
-  const username = 'CarlosJFigueiredo';
-  const userData = await fetchUserData(username);
-  const userRepos = await fetchUserRepos(username);
-  const collaborators = await fetchCollaboratorsData(['', 'joaogscc', 'gabialvarenga', '', 'marcosffp']);
+async function salvarDados() {
+  const dadosusuario = await getProfileData(userProfileURL);
+  const dadosRepositorios = await getRepoData(userReposURL);
+  const dadosEquipe = await getTeamData(teamMemberURLs);
 
-  if (userData && userRepos && collaborators) {
-    const githubUser = buildUserObject(userData);
-    const reposArray = buildReposArray(userRepos);
-
-    const finalData = {
-      usuario: githubUser,
-      repositorios: reposArray,
-      colaboradores: collaborators,
-      carrossel: carrosselImages
+  if (dadosusuario && dadosRepositorios && dadosEquipe) {
+    const githubUser = {
+      id: dadosusuario.id,
+      login: dadosusuario.login,
+      name: dadosusuario.name,
+      bio: dadosusuario.bio,
+      location: dadosusuario.location,
+      followers: dadosusuario.followers,
+      following: dadosusuario.following,
+      public_repos: dadosusuario.public_repos,
+      public_gists: dadosusuario.public_gists,
+      avatar_url: dadosusuario.avatar_url,
+      html_url: dadosusuario.html_url,
+      blog: dadosusuario.blog
     };
 
-    saveDataToFile(finalData);
+    const repositoriosArray = dadosRepositorios.map(repo => ({
+      id: repo.id,
+      name: repo.name,
+      full_name: repo.full_name,
+      description: repo.description,
+      html_url: repo.html_url,
+      stargazers_count: repo.stargazers_count,
+      watchers_count: repo.watchers_count,
+      language: repo.language,
+      forks_count: repo.forks_count,
+      open_issues_count: repo.open_issues_count,
+      created_at: repo.created_at,
+      topics: repo.topics
+    }));
+
+    const equipeArray = dadosEquipe.map(member => ({
+      id: member.id,
+      login: member.login,
+      name: member.name,
+      avatar_url: member.avatar_url,
+      html_url: member.html_url
+    }));
+
+    const dadosFinais = {
+      usuario: githubUser,
+      repositorios: repositoriosArray,
+      equipe: equipeArray,
+      carrossel: carouselImages
+    };
+
+    fs.writeFileSync('./db/db.json', JSON.stringify(dadosFinais, null, 2));
+    console.log('Dados do GitHub adicionados ao arquivo db.json com sucesso!');
   } else {
-    console.log('Erro ao obter dados do usuário, dos repositórios ou dos colaboradores no GitHub');
+    console.log('Erro ao obter dados do usuário, dos repositórios ou da equipe no GitHub');
   }
-};
+}
 
 salvarDados();
