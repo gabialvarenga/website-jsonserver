@@ -15,39 +15,37 @@ document.addEventListener('DOMContentLoaded', () => {
     { src: '/public/assets/img/imagem-blockchain.png', alt: 'tecnologia emergente' }
   ];
 
-  // Função para obter dados do perfil do usuário
-  async function getProfileData(url, containerId) {
-    try {
-      const response = await fetch(url);
-      const profileData = await response.json();
+  // Função para obter dados dos repositórios do usuário
+async function getRepoData() {
+  try {
+    const response = await fetch(userReposURL);
+    const reposData = await response.json();
 
-      const profileHTML = `
-      <img src="${profileData.avatar_url}" alt="Foto de perfil" width="160px" height="160px">
-      <div class="text-content">
-        <h3>${profileData.name}</h3>
-        <p>${profileData.bio || 'Sem biografia disponível.'}</p>
-        <div class="info-icons">
-          <div class="info-text">
-            <p><strong>Localização:</strong> ${profileData.location || 'Não especificado'}</p>
-            <p><strong>Faculdade:</strong> PUC Minas</p>
+    const reposHTML = reposData.map(repo => `
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">${repo.name}</h5>
+              <div class="text-end">
+                <ul class="list-inline">
+                  <li class="list-inline-item">Estrelas: ${repo.stargazers_count}</li>
+                  <li class="list-inline-item">Forks: ${repo.forks_count}</li>
+                </ul>
+              </div>
+            </div>
+            <p class="card-text">${repo.description || 'Sem descrição disponível.'}</p>
+            <a href="repo.html?repo=${repo.name}" class="btn btn-primary" target="_blank">Ver repositório</a>
           </div>
-          <div class="followers">
-            <i class="fa-solid fa-user-friends fa-2x"></i>
-            <p>${profileData.followers} seguidores</p>
-          </div>
-        </div>
-        <div class="social-links">
-          <a href="${profileData.html_url}" target="_blank"><i class="fa-brands fa-github"></i></a>
-          ${profileData.blog ? `<a href="${profileData.blog}" target="_blank"><i class="fa-solid fa-link"></i></a>` : ''}
         </div>
       </div>
-    `;
+    `).join('');
 
-      document.getElementById(containerId).innerHTML = profileHTML;
-    } catch (error) {
-      console.error(`Erro ao obter dados do perfil de ${url}:`, error);
-    }
+    document.getElementById('projects-content').innerHTML = reposHTML;
+  } catch (error) {
+    console.error('Erro ao obter dados dos repositórios:', error);
   }
+}
 
 // Função para obter dados dos repositórios do usuário
 async function getRepoData() {
@@ -102,21 +100,37 @@ async function getRepoData() {
 
 
   // Função para carregar imagens no carousel
-  function loadCarouselImages() {
+// Exemplo simplificado para carregar dinamicamente o carrossel
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselImages = [
+    { src: '/public/assets/img/imagem-chatbot.png', alt: 'tecnologia', title: 'Chatbot', description: 'Descrição do chatbot.', link: 'https://example.com/chatbot' },
+    { src: '/public/assets/img/imagem-iot.png', alt: 'inovação', title: 'IoT', description: 'Descrição de IoT.', link: 'https://example.com/iot' },
+    // Adicione mais objetos conforme necessário
+  ];
+
+  function loadCarouselContent() {
     const carouselInner = document.querySelector('.carousel-inner');
 
     const carouselHTML = carouselImages.map((image, index) => `
       <div class="carousel-item ${index === 0 ? 'active' : ''}">
         <img src="${image.src}" class="d-block w-100" alt="${image.alt}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>${image.title}</h5>
+          <p>${image.description}</p>
+          <a href="${image.link}" class="btn btn-primary" target="_blank">Ver mais</a>
+        </div>
       </div>
     `).join('');
 
     carouselInner.innerHTML = carouselHTML;
   }
+ 
+});
+
 
   // Carregar dados da página
   getProfileData(userProfileURL, 'about-content');
   getRepoData();
   getTeamData();
-  loadCarouselImages();
+  loadCarouselContent();
 });

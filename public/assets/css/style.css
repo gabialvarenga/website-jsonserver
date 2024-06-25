@@ -315,4 +315,34 @@ body {
     background-color: #6e8cb6;
     border-color: #6e8cb6;
   }
-  
+  @media only screen and (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabecalho .lg {
+        margin-left: 0;
+        margin-bottom: 20px; /* Espaçamento inferior */
+    }
+
+    .menu {
+        margin-top: 20px; /* Espaçamento superior */
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 6px;
+        font-size: 18px; /* Tamanho da fonte ajustado */
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main h2,
+    .main hr {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
